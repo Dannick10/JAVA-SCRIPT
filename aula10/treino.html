@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino java</title>
+    <style>
+        table{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando</h1>
+    <p>Digite a Media 1 do aluno</p>
+    <input type="number" name="" id="tn1">
+    <p>Digite a media 2 do aluno</p>
+    <input type="number" name="" id="tn2">
+    <br>
+    <br>
+    <input type="button" value="enviar" onclick="somar()">
+
+    <h2 id="res">Resultado: </h2>
+    <table>
+        <caption>Boletim</caption>
+        <tr>
+            <th>ALuno</th>
+            <th>media 01 </th>
+            <th>media 02</th>
+        </tr>
+        <tr>
+            <td >Daniel</td>
+           <td id="md1"></td>
+           <td id="md2"></td>
+        </tr>
+
+    </table>
+    <h1 id="sit"></h1>
+    <script>
+        function somar(){
+            var n1 = window.document.getElementById('tn1')
+            var n2 = window.document.getElementById('tn2')
+            var res = window.document.getElementById('res')
+            var md1 = window.document.getElementById('md1')
+            var md2 = window.document.getElementById('md2')
+            var sit = window.document.getElementById('sit')
+
+            n1 = Number(tn1.value)
+            n2 = Number(tn2.value)
+
+            var s = n1 + n2 
+           
+
+            res.innerHTML = `O valor da soma é ${s}`
+            md1.innerHTML = `${n1}`
+            md2.innerHTML = `${n2}`
+
+            if(s >= 6){
+                sit.innerHTML = `aprovado`
+            }
+            else{
+                sit.innerHTML = `reprovado`
+            }
+           
+        }
+        
+    </script>
+    
+</body>
+</html>
