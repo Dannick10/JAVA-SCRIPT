@@ -5,66 +5,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Treino java</title>
     <style>
-        table{
-            text-align: center;
+        body {
+            background-color: rgba(196, 217, 255, 0.5);
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1em;
+            
         }
+
+         p{ 
+            font-weight: bold;
+           color: rgb(241, 146, 68);
+        }
+
+        .count {
+            background-color: rgb(80, 101, 121);
+            text-align: center;
+            width: 400px;
+            margin: auto;
+            padding: 10px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.356);
+        }
+
+        input{
+            height: 20px;
+            width: 150px;
+            border: none;
+           background-color: antiquewhite;
+        }
+
+      .btn{
+            width: 100px;
+            height: 50px;
+            
+        }
+
+        .btn:hover{
+            background-color: white;
+        }
+
+        .btn:active{
+            background-color: green;
+        }
+
+
+                   
+
+        input:focus{
+            background-color: rgb(255, 255, 255);
+        }
+
+        table {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        td, th {
+        
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+
+        caption {
+            background-color: black;
+            color: white;
+        }
+
+       
+                
     </style>
 </head>
 <body>
+<div class="count">
+
     <h1>Somando</h1>
+    <p>Digite o nome do aluno</p>
+    <input type="text" id="name1" maxlength="13">
     <p>Digite a Media 1 do aluno</p>
-    <input type="number" name="" id="tn1">
+    <input type="number" name="" id="tn1" min="0" max="10"  step="0.1">
     <p>Digite a media 2 do aluno</p>
-    <input type="number" name="" id="tn2">
+    <input type="number" name="" id="tn2" min="0" max="10" step="0.1">
     <br>
     <br>
-    <input type="button" value="enviar" onclick="somar()">
+    <input type="button" class="btn" value="enviar"  onclick="somar()">
 
-    <h2 id="res">Resultado: </h2>
-    <table>
-        <caption>Boletim</caption>
-        <tr>
-            <th>ALuno</th>
-            <th>media 01 </th>
-            <th>media 02</th>
-        </tr>
-        <tr>
-            <td >Daniel</td>
-           <td id="md1"></td>
-           <td id="md2"></td>
-        </tr>
+</div>
 
-    </table>
-    <h1 id="sit"></h1>
-    <script>
-        function somar(){
-            var n1 = window.document.getElementById('tn1')
-            var n2 = window.document.getElementById('tn2')
-            var res = window.document.getElementById('res')
-            var md1 = window.document.getElementById('md1')
-            var md2 = window.document.getElementById('md2')
-            var sit = window.document.getElementById('sit')
+<table>
+    <caption>Boletim</caption>
+    <tr>
+        <th>ALuno</th>
+        <th>media 01</th>
+        <th>media 02</th>
+        <th>total</th>
+    </tr>
+    <tr>
+        <td id="nameres">Daniel</td>
+        <td id="md1">0</td>
+        <td id="md2">0</td>
+        <td id="tl">0</tr>
+    </tr>
+</table>
+<h1 id="sit" id></h1>
 
-            n1 = Number(tn1.value)
-            n2 = Number(tn2.value)
+<script>
+    function somar() {
+        var n1 = window.document.getElementById('tn1');
+        var n2 = window.document.getElementById('tn2');
+        var md1 = window.document.getElementById('md1');
+        var md2 = window.document.getElementById('md2');
+        var sit = window.document.getElementById('sit');
+        var tl = window.document.getElementById('tl');
+        var name = window.document.getElementById('name1')
+        var namet = window.document.getElementById('nameres')
 
-            var s = n1 + n2 
-           
-
-            res.innerHTML = `O valor da soma é ${s}`
-            md1.innerHTML = `${n1}`
-            md2.innerHTML = `${n2}`
-
-            if(s >= 6){
-                sit.innerHTML = `aprovado`
-            }
-            else{
-                sit.innerHTML = `reprovado`
-            }
-           
-        }
-        
-    </script>
     
+
+        // Corrigido o acesso aos valores dos campos de entrada
+        var valorN1 = Number(n1.value);
+        var valorN2 = Number(n2.value);
+        var name  = String(name.value)
+        var s = (valorN1 + valorN2) / 2;
+        console.log(s)
+        md1.innerHTML = `${valorN1}`;
+        md2.innerHTML = `${valorN2}`;
+        tl.innerHTML = `${s}`;
+        nameres.innerHTML = `${name}`
+
+        if (s >= 6) {
+            sit.innerHTML = `aprovado`;
+            
+        } else {
+            sit.innerHTML = `reprovado`;
+        }
+
+    }
+</script>
+
 </body>
 </html>
