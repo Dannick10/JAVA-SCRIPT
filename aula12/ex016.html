@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: rgb(241, 241, 241);
+        }
+
+        img{
+            width: 100px;
+        }
+
+        p{
+            font-size: 1.2em;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+        }
+
+
+        header{
+            padding: 30px;
+            height: 240px;
+            background: url(https://www.aprovaconcursos.com.br/noticias/wp-content/uploads/2021/09/Caixa-economica.jpg);
+            background-repeat: no-repeat;
+           background-size: cover;
+        }
+
+        .container-header{
+            display: flex;
+            justify-content: space-between;
+            
+        }
+
+        
+        .caixa{ 
+            filter: drop-shadow( 2px 1px 1px rgba(0, 0, 0, 0.26));
+           
+            
+        }
+
+        nav{
+           border-bottom: 1px solid rgba(85, 84, 84, 0.459);
+           padding: 10px;
+            text-align: center;
+        }
+        
+        ul{
+            display: flex;
+            list-style: none;
+            padding: 5px;
+            
+        }
+
+        li{
+            font: 20px arial;
+            font-weight: bold;
+            padding: 0 20px;
+            
+        }
+
+        main{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        main div{
+            width: 30%;
+            height: 170px;
+            background-color: white;
+            border-radius: 20px;
+            cursor: pointer;
+
+        }
+
+        section{
+            width: 300px;
+            height: 200px;
+            margin: auto;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        i{
+          font-size: 1.8em; 
+          text-align: center;
+          margin-top: 40px;
+          margin-left: 30%;
+        }
+        
+
+        section div{
+            padding-top: 80px;
+            font-size: 1.5em;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+           
+        }
+
+    
+input{
+    width: 40px;
+   
+}
+
+
+    </style>
+
+</head>
+<body>
+
+    <header id="header-caixa">
+
+     <div class="container-header">
+         <div class="fgts">
+          <img src="https://acessoseguro.caixa.gov.br/media/fug/img/FGTS_logo.png" alt="">
+        </div>
+        <div class="caixa">
+          <img src="https://logodownload.org/wp-content/uploads/2014/02/caixa-logo-6.png" alt="">
+        </div>
+         
+     </div>
+
+    </header>
+
+    <nav>
+        <ul>
+            <li>Favotios</li>
+            <li>Atalhos</li>
+            <li>Cobrar</li>
+        </ul>
+    </nav>
+
+    <section id="Saldo">
+        <p>Saldo</p>
+        <hr>
+        <div id="saldoCliente" value="0">R$:</div>
+    </section>
+
+
+<main>  
+       
+    
+      
+    
+        <div id="deposito" >
+          
+            <p>Depositar</p>
+          
+            <i class="fa-solid fa-money-bill-transfer"></i>
+           
+                  <h2>Depositar</h2>
+                 <input type="number" id="tvalorD">valor <input type="submit" value="Enviar" onclick="soma1()">
+                </div>
+                
+              </div>
+
+        </div>
+    
+        <div id="saque">
+
+
+
+            <p>Saque</p>
+           
+            
+
+            <i class="fa-solid fa-piggy-bank"></i>
+
+           
+                  <h2>Sacar</h2>
+                 <input type="number" id="tvalorS">valor<input type="submit" value="Enviar" onclick="soma2()">
+                </div>
+                
+              </div>
+        
+        </div>
+    
+        <div id="Finalizar">
+
+            <p>Finalizar</p>
+            
+        </div>    
+
+
+</main>
+
+<script>
+ var saldo = document.querySelector('#saldoCliente');
+var saldoValue = parseFloat(saldo.getAttribute('value'));
+
+
+function soma1() {
+    var tvalorD = document.querySelector('#tvalorD'); 
+    var valord = Number.parseFloat(tvalorD.value);
+
+    saldoValue += valord;
+    saldo.innerHTML = 'R$: ' + saldoValue;
+}
+
+function soma2() {
+    var tvalorS = document.querySelector('#tvalorS'); 
+    var valors = Number.parseFloat(tvalorS.value);
+
+
+    if(valors <= saldoValue){
+
+    saldoValue -= valors;
+
+    saldo.innerHTML = 'R$: ' + saldoValue;
+    } else {
+       window.alert('Valor negado')
+    }
+
+  
+}
+
+
+</script>
+
+
+</script>
+
+<script src="https://kit.fontawesome.com/e98b48dcc9.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinando</title>
+    <style>
+        body{
+            background-color: rgb(22, 60, 73);
+            color: rgb(255, 255, 255);
+            font: 2em arial;
+        }
+
+        .date{
+            background-color: rgb(0, 0, 0);
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Que dia é hoje ?</h1>
+    <div class="date" id="date">
+        <h1></h1>
+
+    <script>
+        var time = window.document.getElementById('date')
+
+        var date = new Date()
+        day =  date.getDay()
+        hour = date.getHours()
+        min = date.getMinutes()
+        onTime = date.getFullYear()
+        m = date.getMonth() + 1
+        d = date.getUTCDate()
+
+        switch (day){
+            case 0: 
+            time.innerHTML += 'Domingo'
+            break
+            
+            case 1: 
+            time.innerHTML += 'segunda'
+            break
+
+            case 2: 
+            time.innerHTML += 'terça'
+            break
+
+            case 3:
+            time.innerHTML += 'quarta'
+            break 
+
+            case 4: 
+            time.innerHTML += 'quinta'
+            break
+
+            case 5:
+            time.innerHTML += 'sexta'
+            break
+
+            case 6:
+            time.innerHTML += 'Sabado'
+            break
+
+            default:
+            timer.innerHTML += 'Erro dia invalido'
+            break
+        
+        }
+        time.innerHTML += `<br><br>${d}`
+        time.innerHTML += ` / ${m}`
+        time.innerHTML += ` / ${onTime} `
+
+
+        time.innerHTML += ` / ${hour}:${min}`
+       
+     
+        
+  
+      
+    </script>
+    
+</body>
+</html>
