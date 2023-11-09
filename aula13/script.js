@@ -2,12 +2,13 @@ function carregar(){
 var msg = window.document.getElementById('msg')
 var photo = window.document.getElementById('imagem')
 var data = new Date()
-    var hora = data.toLocaleString('pt-br', {hour: '2-digit', hour12: false, minute: '2-digit'})
+    var horad = data.toLocaleString('pt-br', {hour: '2-digit', hour12: false, minute: '2-digit'})
     var dete = data.toLocaleDateString('pt-br', {dateStyle: 'full'}) 
+    hora = data.getHours()
     
-    msg.innerHTML =  `${hora}`
+    msg.innerHTML =  `${horad}`
     msg.innerHTML += `<br> ${dete}`
-  
+    
 
   
     if( hora >= 0 && hora < 12){
