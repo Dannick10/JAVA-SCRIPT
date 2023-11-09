@@ -7,7 +7,7 @@
    
     <title>Modelo verificador de idade</title>
 </head>
-<body onload="carregar()">
+<body>
 
     <header>
         <h1>Verificador de Idade</h1>
@@ -19,10 +19,11 @@
             <input type="number" name="txano" id="txano" min="0">
             </p>
             <p>Sexo
-                <input type="radio" name="radsex" id="masc"> 
+                <input type="radio" name="radsex" id="mas" > 
                 <label for="masc">Masculino</label>
-                <input type="radio" name="dasex" id="fem">
+                <input type="radio" name="radsex" id="fem"> 
                 <label for="fem">Feminino</label>       
+               
             </p>
             <p>
                 <input type="button" value="Verificar" onclick="verificar()">
@@ -30,8 +31,8 @@
     
         </div>
        
-        <div>
-            <img id="imagem" src="" alt="">
+        <div id="res">
+            preecha os dados acima para ver o resultado
         </div>
     </section>
 
